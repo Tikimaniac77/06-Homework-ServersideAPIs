@@ -9,10 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -22,9 +19,9 @@
             <h1 class=" d-flex justify-content-center text-white"> Weather Dashboard</h1>
         </div>
     </header>
-    <Section class="container mt-4" id="main">
+    <Section class="container mt-4" id="main1">
         <div class="row">
-            <div class="col-4" id="formNlist">
+            <div class="col-2" id="formNlist">
                 <form>
                     <div class="form-group">
                         <label for="citySearch">Search for a City</label>
@@ -36,16 +33,18 @@
 
                 </ul>
             </div>
-            <div class="col-8" id="weatherNforecast">
+            <div class="col-10" id="weather">
                 <div class="border border-secondary" id="cityWeather">
-                    
-                </div>
-                <div class="border border-secondary" id="forecast">
-                    Placeholder
+
                 </div>
             </div>
+    </Section class="mt-4" id="main2">
+        <div class="container border border-secondary .d-none" id="forecast">
+            <h2 class="hidden d-flex justify-content-center" id="fiveH">5 Day Forecast:</h2>
+
         </div>
-    </Section>
+    </div>
+
 
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"

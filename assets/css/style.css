@@ -1,4 +1,31 @@
 .header{
-    background-image: linear-gradient(to bottom right, rgb(71, 118, 245), rgb(43, 12, 182));
-    
+    background-image: linear-gradient(to bottom right, rgb(71, 118, 245), rgb(43, 12, 182));    
 }
+
+.uvLow{
+    color: rgb(11, 221, 11);
+    background-color: black;
+    width: 150px;
+}
+
+.uvHigh{
+    color: red;
+    background-color: black;
+    width: 150px;
+}
+
+.uvMod{
+    color: yellow;
+    background-color: black;
+    width: 150px;
+}
+
+#forecastDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+#fiveH {
+    display: none;
+}
+
