@@ -231,6 +231,7 @@ function renderList() {
        cityInput = "";
        cityInput = event.target.textContent;
        console.log(cityInput);
+       
       })
 
       cityList.append(cityListItems);
