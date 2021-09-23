@@ -29,7 +29,7 @@ Download the repository when ready
 
 ## Usage
 
-![screencap of the site is:](assets\images\weather.png)
+![screencap of the site is:](assets/images/weather.png)
 
 ## Credits
 
