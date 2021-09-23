@@ -101,7 +101,7 @@ function getApi(event,citySelect) {
 
           currentWeather.append(resultDiv);
 
-          var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&units=imperial&appid=" + APIKey;
+          var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&units=imperial&appid=" + APIKey;
           
           //fetch and generate elements for 5 day forecast
           fetch(forecastURL)
