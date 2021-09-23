@@ -14,16 +14,16 @@ var listContainer = [];
 
 
 //function will take city name input into form and generate elements dynamically on page using weatherAPI fetch requests.
-function getApi(event) {
+function getApi(event,citySelect) {
     currentWeather.innerHTML = '';
             
-    var cityInput = document.getElementById('cityInput').value;
+    var cityInput = document.getElementById('cityInput').value || citySelect;
     var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&APPID=" + APIKey;
     
     console.log(cityInput);
     console.log(requestUrl);
     event.preventDefault();
-
+    
     //fetch request
     fetch(requestUrl)
       .then(function (response){
@@ -115,47 +115,47 @@ function getApi(event) {
                 var daysArray = [];
 
                 let d1 = {
-                    date: moment(dat.list[0].dt_txt, "YYYY-MM-DD").format("L"),
-                    icon: dat.list[0].weather[0].icon,
-                    temp: dat.list[0].main.temp,
-                    wind: dat.list[0].wind.speed,
-                    humid: dat.list[0].main.humidity                    
+                    date: moment(dat.list[4].dt_txt, "YYYY-MM-DD").format("L"),
+                    icon: dat.list[4].weather[0].icon,
+                    temp: dat.list[4].main.temp,
+                    wind: dat.list[4].wind.speed,
+                    humid: dat.list[4].main.humidity                    
                 };
                 daysArray.push(d1);
                 
                 let d2 = {
-                    date: moment(dat.list[8].dt_txt, "YYYY-MM-DD").format("L"),
-                    icon: dat.list[8].weather[0].icon,
-                    temp: dat.list[8].main.temp,
-                    wind: dat.list[8].wind.speed,
-                    humid: dat.list[8].main.humidity                  
+                    date: moment(dat.list[12].dt_txt, "YYYY-MM-DD").format("L"),
+                    icon: dat.list[12].weather[0].icon,
+                    temp: dat.list[12].main.temp,
+                    wind: dat.list[12].wind.speed,
+                    humid: dat.list[12].main.humidity                  
                 };
                 daysArray.push(d2);
 
                 let d3 = {
-                    date: moment(dat.list[16].dt_txt, "YYYY-MM-DD").format("L"),
-                    icon: dat.list[16].weather[0].icon,
-                    temp: dat.list[16].main.temp,
-                    wind: dat.list[16].wind.speed,
-                    humid: dat.list[16].main.humidity                  
+                    date: moment(dat.list[20].dt_txt, "YYYY-MM-DD").format("L"),
+                    icon: dat.list[20].weather[0].icon,
+                    temp: dat.list[20].main.temp,
+                    wind: dat.list[20].wind.speed,
+                    humid: dat.list[20].main.humidity                  
                 };
                 daysArray.push(d3);
 
                 let d4 = {
-                    date: moment(dat.list[24].dt_txt, "YYYY-MM-DD").format("L"),
-                    icon: dat.list[24].weather[0].icon,
-                    temp: dat.list[24].main.temp,
-                    wind: dat.list[24].wind.speed,
-                    humid: dat.list[24].main.humidity                  
+                    date: moment(dat.list[28].dt_txt, "YYYY-MM-DD").format("L"),
+                    icon: dat.list[28].weather[0].icon,
+                    temp: dat.list[28].main.temp,
+                    wind: dat.list[28].wind.speed,
+                    humid: dat.list[28].main.humidity                  
                 };
                 daysArray.push(d4);
 
                 let d5 = {
-                    date: moment(dat.list[32].dt_txt, "YYYY-MM-DD").format("L"),
-                    icon: dat.list[32].weather[0].icon,
-                    temp: dat.list[32].main.temp,
-                    wind: dat.list[32].wind.speed,
-                    humid: dat.list[32].main.humidity                  
+                    date: moment(dat.list[36].dt_txt, "YYYY-MM-DD").format("L"),
+                    icon: dat.list[36].weather[0].icon,
+                    temp: dat.list[36].main.temp,
+                    wind: dat.list[36].wind.speed,
+                    humid: dat.list[36].main.humidity                 
                 };
                 daysArray.push(d5);                
                 console.log(daysArray);
@@ -222,15 +222,25 @@ function renderList() {
       var cityListItems = document.createElement('button');
 
       cityListItems.textcontent = cityInput;
+      
       cityListItems.setAttribute('data-index', i);
       cityListItems.classList.add('listBtn')
       cityListItems.textContent = listItem;
+      document.getElementById('cityInput').value = '';
 
-      //trying to get cityList items to button click
+      //trying to get cityList items to change cityInpupt to getAPI function?
       cityListItems.addEventListener('click', function(event){
-       cityInput = "";
+       //cityInput = "";
        cityInput = event.target.textContent;
        console.log(cityInput);
+       /*function changeHandler(){
+           var x=document.getElementById('cityInput').value;
+           x.value = cityInput;
+
+       }
+       changeHandler();*/
+       getApi(event,cityInput);
+
        
       })
 
@@ -256,6 +266,9 @@ function storedList(){
 
 
 submitBtn.addEventListener('click', getApi);
+
+
+
 
 
 //listBtn.addEventListener('click', getApi);
